@@ -1,7 +1,7 @@
 for (i = 0; i < (document.querySelectorAll(".drum").length); i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", drumPlay)
   function drumPlay() {
-    this.style.color = "white"
+    //this.style.color = "white"
     console.log(this)
 
     var buttoninnerHtml = this.innerHTML
@@ -124,7 +124,7 @@ function drumkeyplay(e) {
       break;
 
     default:
-      console.log(buttoninnerHtml);
+      console.log(e.key + " your pressed wrong key");
 
       break;
   }
