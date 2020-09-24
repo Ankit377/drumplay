@@ -4,11 +4,12 @@ for (i = 0; i < (document.querySelectorAll(".drum").length); i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", drumPlay)
   function drumPlay() {
     //this.style.color = "white"
-    console.log(this)
+    // console.log(this)
 
     var buttoninnerHtml = this.innerHTML
-    console.log(buttoninnerHtml);
+    //console.log(buttoninnerHtml);
     makeSound(buttoninnerHtml);
+    buttonAnimation(buttoninnerHtml);
   }
 }
 
@@ -23,6 +24,8 @@ function drumkeyplay(e) {
   var pressedkey = e.key
 
   makeSound(pressedkey)
+  buttonAnimation(pressedkey)
+
 
 }
 
@@ -65,4 +68,16 @@ function makeSound(key) {
 
       break;
   }
+}
+function buttonAnimation(currentkey) {
+
+  var currenButton = document.querySelector("." + currentkey)
+
+  currenButton.classList.add("pressed")
+
+  setTimeout(function () { currenButton.classList.remove("pressed") }, 100)
+
+
+
+
 }
